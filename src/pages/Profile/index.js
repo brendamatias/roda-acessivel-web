@@ -1,7 +1,15 @@
 import React from 'react';
+import { Form } from '@rocketseat/unform';
 
-// import { Container } from './styles';
+import EditProfile from '~/components/EditProfile';
+import { Container } from './styles';
 
 export default function Profile() {
-  return <div />;
+  const teste = true;
+
+  return (
+    <Container>
+      <Form>{teste ? <EditProfile /> : 'Entrar'}</Form>
+    </Container>
+  );
 }
