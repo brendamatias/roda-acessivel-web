@@ -1,8 +1,8 @@
 import React from 'react';
-
-// import { Container } from './styles';
+import api from '~/services/api';
 
 export default function Dashboard() {
+  api.get('categories');
   return (
     <div>
       <h1>Dashboard</h1>
