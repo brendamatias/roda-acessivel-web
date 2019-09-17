@@ -21,7 +21,6 @@ export const Content = styled.div`
       margin-right: 20px;
       padding-right: 20px;
       border-right: 1px solid #eee;
-      max-width: 100%;
     }
 
     a {
