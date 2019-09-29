@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { darken } from 'polished';
 
 export const Loading = styled.div`
   color: #fff;
@@ -11,17 +12,48 @@ export const Loading = styled.div`
 `;
 
 export const Container = styled.div`
-  height: 100%;
-  max-width: 500px;
-  margin: 50px auto;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  max-width: 500px;
+  margin: 80px auto;
+
+  a {
+    color: #fff;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: #f64c75;
+  }
+
+  img {
+    height: 200px;
+    width: 100%;
+    border-radius: 2px;
+  }
+
+  button {
+    width: 100%;
+    margin: 10px 0 0;
+    padding: 12px 0;
+    background: #f64c75;
+    font-weight: bold;
+    color: #fff;
+    border: 0;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: background 0.2s;
+
+    &:hover {
+      background: ${darken(0.08, '#f64c75')};
+    }
+  }
 `;
 
 export const Description = styled.div`
   position: relative;
-  top: -60px;
-  max-width: 450px;
+  top: -30px;
+  width: 450px;
   padding: 20px;
   margin: 0 auto;
   border-radius: 4px;
@@ -31,6 +63,7 @@ export const Description = styled.div`
 
   strong {
     font-size: 24px;
+    color: #333333;
   }
 
   p {
@@ -40,35 +73,65 @@ export const Description = styled.div`
   .span {
     color: #9e9e9e;
   }
-`;
 
-export const Description2 = styled.div`
-  display: flex;
-
-  div {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    a {
-      display: block;
-      color: #ff709f;
-      font-size: 20px;
-    }
-
-    span {
-      display: block;
-      margin-top: 3px;
-      color: ${props => (props.accessible ? 'green' : '#999')};
-    }
+  .endereco {
+    margin: 15px 0;
 
     p {
-      color: #9e9e9e;
+      margin: 1px 0;
+    }
+  }
+
+  .open {
+    color: #2d9900;
+  }
+`;
+
+export const Accessible = styled.div`
+  ul {
+    margin-top: 20px;
+    background: #fff;
+    padding: 50px;
+    border-radius: 4px;
+    border: 1px solid #dbdbdb;
+
+    li {
+      color: #333333;
+      border-bottom: 1px solid #eee;
+      padding: 15px 0;
+      span {
+        display: flex;
+        align-items: center;
+        padding-bottom: 10px;
+
+        &::after {
+          margin-left: 12px;
+          display: block;
+          content: '';
+          border-radius: 100%;
+          width: 15px;
+          height: 15px;
+          background: black;
+        }
+      }
+      strong {
+        display: flex;
+        align-items: center;
+        padding-bottom: 10px;
+
+        div {
+        }
+      }
     }
   }
 `;
 
-export const Icon = styled.img`
-  width: 50px;
+export const Circle = styled.div`
+  margin-left: 12px;
+  display: block;
+  content: '';
+  border-radius: 100%;
+  width: 15px;
+  height: 15px;
+  background: ${props => props.background};
 `;

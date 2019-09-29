@@ -2,19 +2,29 @@ import styled from 'styled-components';
 import { darken } from 'polished';
 
 export const Container = styled.div`
-  max-width: 600px;
-  margin: 50px auto;
+  height: calc(100% - 64px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  strong {
+    color: #fff;
+    font-size: 30px;
+  }
 
   form {
     display: flex;
     flex-direction: column;
-    margin-top: 30px;
+    margin-top: 40px;
 
     input {
       background: rgba(255, 255, 255, 0.1);
       border: 0;
       border-radius: 4px;
       height: 44px;
+      width: 600px;
       padding: 0 15px;
       color: #fff;
       margin: 0 0 10px;
@@ -46,32 +56,10 @@ export const Container = styled.div`
         background: ${darken(0.06, '#2AB7D8')};
       }
     }
-
-    span {
-      color: #fb6f91;
-      align-self: flex-start;
-      margin: 0 0 10px;
-      font-weight: bold;
-    }
-
-    .span {
-      color: #fff;
-      margin-top: 20px;
-      font-size: 14px;
-      align-self: center;
-
-      a {
-        color: #2ab7d8;
-        opacity: 0.8;
-
-        &:hover {
-          opacity: 1;
-        }
-      }
-    }
   }
+
   > button {
-    width: 100%;
+    width: 600px;
     margin: 10px 0 0;
     height: 44px;
     background: #f64c75;

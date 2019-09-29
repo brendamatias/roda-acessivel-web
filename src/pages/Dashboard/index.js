@@ -1,67 +1,87 @@
-import React, { useState, useEffect } from 'react';
-import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import api from '~/services/api';
 
-import { Container, Location, Description, Icon } from './styles';
+import { Container } from './styles';
 
-import local from '~/assets/mirabilandia.jpg';
-import acessivel from '~/assets/placeholder-filled-tool-shape-for-maps@4x.svg';
+import sobre from '~/assets/categorias/sobre.svg';
+import transporte from '~/assets/categorias/transporte.svg';
+import praias from '~/assets/categorias/praias.svg';
+import gastronomia from '~/assets/categorias/gastronomia.svg';
+import hospedagens from '~/assets/categorias/hospedagens.svg';
+import passeios from '~/assets/categorias/passeios.svg';
+import diversao from '~/assets/categorias/diversao.svg';
+import pontoshistoricos from '~/assets/categorias/pontoshistoricos.svg';
+import compras from '~/assets/categorias/compras.svg';
 
 export default function Dashboard() {
-  const [locations, setLocations] = useState([]);
-  const [page, setPage] = useState(1);
-
-  // const profile = useSelector(state => state.user.profile);
-
-  useEffect(() => {
-    async function loadLocations() {
-      const response = await api.get(`locations?page=${page}`);
-      setLocations(response.data);
-    }
-
-    loadLocations();
-  }, [page]);
-
-  function handlePrevPage() {
-    if (!(page - 1 < 0)) {
-      setPage(page - 1);
-    }
-  }
-
-  function handleNextPage() {
-    setPage(page + 1);
-  }
+  const categorias = [
+    {
+      id: 1,
+      title: 'Sobre Recife',
+      image: sobre,
+    },
+    {
+      id: 2,
+      title: 'Transporte',
+      image: transporte,
+    },
+    {
+      id: 3,
+      title: 'Praias',
+      image: praias,
+    },
+    {
+      id: 4,
+      title: 'Gastronomia',
+      image: gastronomia,
+    },
+    {
+      id: 5,
+      title: 'Hospedagens',
+      image: hospedagens,
+    },
+    {
+      id: 6,
+      title: 'Passeios',
+      image: passeios,
+    },
+    {
+      id: 7,
+      title: 'Diversão',
+      image: diversao,
+    },
+    {
+      id: 8,
+      title: 'Pontos Históricos',
+      image: pontoshistoricos,
+    },
+    {
+      id: 9,
+      title: 'Compras',
+      image: compras,
+    },
+  ];
 
   return (
     <Container>
-      <strong>Guia de Recife</strong>
+      <strong>
+        Guia de <span>Recife</span>
+      </strong>
       <ul>
-        {locations.map(location => (
-          <Location key={location.id}>
-            <Description>
-              <img className="img" src={local} alt="" />
+        {categorias.map(categoria => (
+          <li key={categoria.id}>
+            <Link
+              to={`/dashboard/${categoria.id}`}
+              params={{ category: categoria.id }}
+            >
               <div>
-                <Link to={`/dashboard/${location.id}`}>{location.name}</Link>
-                <p>
-                  <span>Acessível</span> 3,18km
-                </p>
+                <img src={categoria.image} alt={categoria.title} />
               </div>
-            </Description>
-            <Icon src={acessivel} alt="" />
-          </Location>
+              <span>{categoria.title}</span>
+            </Link>
+          </li>
         ))}
-        ;
       </ul>
-      <footer>
-        <button type="button" onClick={handlePrevPage}>
-          <MdChevronLeft size={36} color="#fff" />
-        </button>
-        <strong>{page}</strong>
-        <button type="button" onClick={handleNextPage}>
-          <MdChevronRight size={36} color="#fff" />
-        </button>
-      </footer>
     </Container>
   );
 }

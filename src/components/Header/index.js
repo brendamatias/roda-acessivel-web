@@ -15,6 +15,7 @@ export default function Header() {
         <nav>
           <img src={logo} alt="Roda Acessível" />
           <Link to="/dashboard">DASHBOARD</Link>
+          <Link to="/dashboard">LOCAIS</Link>
         </nav>
         <aside>
           <Profile>
