@@ -15,7 +15,6 @@ export default function Header() {
         <nav>
           <img src={logo} alt="Roda Acessível" />
           <Link to="/dashboard">DASHBOARD</Link>
-          <Link to="/dashboard">LOCAIS</Link>
         </nav>
         <aside>
           <Profile>
@@ -23,10 +22,6 @@ export default function Header() {
               <strong>{profile.name}</strong>
               <Link to="/profile">Meu perfil</Link>
             </div>
-            <img
-              src="https://api.adorable.io/avatars/50/abott@adorable.png"
-              alt={profile.name}
-            />
           </Profile>
         </aside>
       </Content>

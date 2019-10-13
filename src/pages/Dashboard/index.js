@@ -3,18 +3,18 @@ import { Link } from 'react-router-dom';
 
 import { Container } from './styles';
 
-import sobre from '~/assets/categorias/sobre.svg';
-import transporte from '~/assets/categorias/transporte.svg';
-import praias from '~/assets/categorias/praias.svg';
-import gastronomia from '~/assets/categorias/gastronomia.svg';
-import hospedagens from '~/assets/categorias/hospedagens.svg';
-import passeios from '~/assets/categorias/passeios.svg';
-import diversao from '~/assets/categorias/diversao.svg';
-import pontoshistoricos from '~/assets/categorias/pontoshistoricos.svg';
-import compras from '~/assets/categorias/compras.svg';
+import sobre from '~/assets/categories/sobre.svg';
+import transporte from '~/assets/categories/transporte.svg';
+import praias from '~/assets/categories/praias.svg';
+import gastronomia from '~/assets/categories/gastronomia.svg';
+import hospedagens from '~/assets/categories/hospedagens.svg';
+import passeios from '~/assets/categories/passeios.svg';
+import diversao from '~/assets/categories/diversao.svg';
+import pontoshistoricos from '~/assets/categories/pontoshistoricos.svg';
+import compras from '~/assets/categories/compras.svg';
 
 export default function Dashboard() {
-  const categorias = [
+  const categories = [
     {
       id: 1,
       title: 'Sobre Recife',
@@ -68,16 +68,16 @@ export default function Dashboard() {
         Guia de <span>Recife</span>
       </strong>
       <ul>
-        {categorias.map(categoria => (
-          <li key={categoria.id}>
+        {categories.map(category => (
+          <li key={category.id}>
             <Link
-              to={`/dashboard/${categoria.id}`}
-              params={{ category: categoria.id }}
+              to={`/dashboard/${category.id}`}
+              params={{ category: category.id }}
             >
               <div>
-                <img src={categoria.image} alt={categoria.title} />
+                <img src={category.image} alt={category.title} />
               </div>
-              <span>{categoria.title}</span>
+              <span>{category.title}</span>
             </Link>
           </li>
         ))}

@@ -1,7 +1,10 @@
 import styled from 'styled-components';
+import { darken } from 'polished';
+
+import colors from '~/styles/colors';
 
 export const Container = styled.div`
-  background: #fff;
+  background: ${colors.secondary};
   padding: 0 30px;
 `;
 
@@ -25,8 +28,13 @@ export const Content = styled.div`
 
     a {
       font-weight: bold;
-      color: #ff709f;
+      color: #fff;
       margin-left: 20px;
+      transition: color 0.2s;
+
+      &:hover {
+        color: ${darken(0.09, colors.primary)};
+      }
     }
 
     aside {
@@ -40,7 +48,6 @@ export const Profile = styled.div`
   display: flex;
   margin-left: 20px;
   padding-left: 20px;
-  border-left: 1px solid #eee;
   align-items: center;
 
   div {
@@ -49,14 +56,19 @@ export const Profile = styled.div`
 
     strong {
       display: block;
-      color: #333;
+      color: #fff;
     }
 
     a {
       display: block;
       margin-top: 2px;
       font-size: 12px;
-      color: #999;
+      color: rgba(255, 255, 255, 0.6);
+      transition: color 0.2s;
+
+      &:hover {
+        color: rgba(255, 255, 255, 0.8);
+      }
     }
   }
 

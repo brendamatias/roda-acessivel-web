@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import colors from '~/styles/colors';
+
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -7,10 +9,17 @@ export const Container = styled.div`
   align-items: center;
   margin-top: 80px;
 
-  strong {
-    color: #fff;
-    margin: 0 auto;
-    font-size: 24px;
+  header {
+    strong {
+      color: ${colors.primary};
+      font-size: 30px;
+      font-weight: normal;
+
+      span {
+        color: #ff709f;
+        font-weight: bold;
+      }
+    }
   }
 
   ul {
@@ -21,7 +30,6 @@ export const Container = styled.div`
 
   footer {
     display: flex;
-    align-self: center;
     align-items: center;
 
     button {
@@ -30,9 +38,10 @@ export const Container = styled.div`
     }
 
     strong {
-      color: #fff;
+      color: #000;
       font-size: 24px;
       margin: 0 20px;
+      font-weight: bold;
     }
   }
 `;
@@ -64,18 +73,21 @@ export const Description = styled.div`
 
     a {
       display: block;
-      color: #ff709f;
-      font-size: 16px;
-    }
-
-    span {
-      display: block;
-      margin-top: 3px;
-      color: ${props => (props.accessible ? 'green' : '#999')};
+      color: ${colors.secondary};
+      font-size: 20px;
+      font-weight: bold;
     }
 
     p {
-      color: #9e9e9e;
+      color: rgba(0, 0, 0, 0.4);
+
+      span {
+        display: block;
+        margin-top: 3px;
+        font-size: 12px;
+        color: rgba(0, 0, 0, 0.6);
+        font-weight: bold;
+      }
     }
   }
 `;

@@ -1,4 +1,7 @@
 import styled from 'styled-components';
+import { darken } from 'polished';
+
+import colors from '~/styles/colors';
 
 export const Container = styled.div`
   text-align: center;
@@ -9,11 +12,13 @@ export const Container = styled.div`
   align-items: center;
 
   strong {
-    color: #fff;
+    color: ${colors.primary};
     font-size: 30px;
+    font-weight: normal;
 
     span {
       color: #ff709f;
+      font-weight: bold;
     }
   }
 
@@ -29,16 +34,22 @@ export const Container = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
-        background: #5b4aff;
+        background: ${colors.secondary};
         height: 80px;
         width: 80px;
         margin: 0 auto 5px auto;
         border-radius: 4px;
+        transition: background 0.2s;
+
+        &:hover {
+          background: ${darken(0.06, colors.secondary)};
+        }
       }
       text-align: center;
 
       span {
-        color: #fff;
+        color: rgba(0, 0, 0, 0.7);
+        font-weight: bold;
       }
     }
   }

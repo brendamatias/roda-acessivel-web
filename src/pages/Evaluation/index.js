@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 import { toast } from 'react-toastify';
 import { Form, Input } from '@rocketseat/unform';
@@ -7,12 +8,12 @@ import { Container, Note } from './styles';
 
 import api from '~/services/api';
 
-export default function Evaluation(props) {
+export default function Evaluation({ history, match }) {
   const [entry, setEntry] = useState();
   const [parking, setParking] = useState();
   const [circulation, setCirculation] = useState();
   const [bathroom, setBathroom] = useState();
-  const locationId = props.match.params.location;
+  const locationId = match.params.location;
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -29,6 +30,7 @@ export default function Evaluation(props) {
 
       const { success } = response.data;
       toast.success(success);
+      history.push(`/details/${locationId}`);
     }
   }
 
@@ -208,3 +210,14 @@ export default function Evaluation(props) {
     </Container>
   );
 }
+
+Evaluation.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      location: PropTypes.string.isRequired,
+    }).isRequired,
+  }).isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
+};

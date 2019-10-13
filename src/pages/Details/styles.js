@@ -60,6 +60,7 @@ export const Description = styled.div`
   background: #fff;
   display: flex;
   flex-direction: column;
+  border: 1px solid #dbdbdb;
 
   strong {
     font-size: 24px;
@@ -87,40 +88,38 @@ export const Description = styled.div`
   }
 `;
 
-export const Accessible = styled.div`
-  ul {
-    margin-top: 20px;
-    background: #fff;
-    padding: 50px;
-    border-radius: 4px;
-    border: 1px solid #dbdbdb;
+export const Accessibility = styled.ul`
+  margin-top: 20px;
+  background: #fff;
+  padding: 50px;
+  border-radius: 4px;
+  border: 1px solid #dbdbdb;
 
-    li {
-      color: #333333;
-      border-bottom: 1px solid #eee;
-      padding: 15px 0;
-      span {
-        display: flex;
-        align-items: center;
-        padding-bottom: 10px;
+  li {
+    color: #333333;
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+    span {
+      display: flex;
+      align-items: center;
+      padding-bottom: 10px;
 
-        &::after {
-          margin-left: 12px;
-          display: block;
-          content: '';
-          border-radius: 100%;
-          width: 15px;
-          height: 15px;
-          background: black;
-        }
+      &::after {
+        margin-left: 12px;
+        display: block;
+        content: '';
+        border-radius: 100%;
+        width: 15px;
+        height: 15px;
+        background: black;
       }
-      strong {
-        display: flex;
-        align-items: center;
-        padding-bottom: 10px;
+    }
+    strong {
+      display: flex;
+      align-items: center;
+      padding-bottom: 10px;
 
-        div {
-        }
+      div {
       }
     }
   }

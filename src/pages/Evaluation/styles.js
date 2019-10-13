@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { darken } from 'polished';
 
+import colors from '~/styles/colors';
+
 export const Container = styled.div`
   text-align: center;
   height: calc(100% - 64px);
@@ -14,7 +16,7 @@ export const Container = styled.div`
   }
 
   strong {
-    color: #fff;
+    color: ${colors.primary}
     font-size: 30px;
   }
 
@@ -22,6 +24,7 @@ export const Container = styled.div`
     background: #fff;
     border-radius: 4px;
     padding: 40px;
+    border: 1px solid #dbdbdb;
   }
 
   button {

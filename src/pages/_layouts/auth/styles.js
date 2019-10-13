@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { darken } from 'polished';
 
+import colors from '~/styles/colors';
+
 export const Wrapper = styled.div`
   height: 100%;
   display: flex;
@@ -25,21 +27,29 @@ export const Content = styled.div`
     input {
       background: rgba(255, 255, 255, 0.1);
       border: 0;
-      border-radius: 4px;
+      border-radius: 8px;
       height: 44px;
       padding: 0 15px;
-      color: #fff;
+      color: #4e5159;
       margin: 0 0 10px;
+      border: 2px solid #dfe5f2;
+      font-size: 1rem;
+      line-height: 1.25;
+
+      &:focus {
+        transition: ease-in-out, border 0.35s ease-in-out;
+        border: 2px solid ${colors.secondary};
+      }
 
       &::placeholder {
-        color: rgba(255, 255, 255, 0.7);
+        color: rgba(0, 0, 0, 0.3);
       }
     }
 
     button {
       margin: 5px 0 0;
       height: 44px;
-      background: #2ab7d8;
+      background: ${colors.secondary};
       font-weight: bold;
       color: #fff;
       border: 0;
@@ -48,7 +58,7 @@ export const Content = styled.div`
       transition: background 0.2s;
 
       &:hover {
-        background: ${darken(0.06, '#2AB7D8')};
+        background: ${darken(0.06, colors.secondary)};
       }
     }
 
@@ -60,13 +70,13 @@ export const Content = styled.div`
     }
 
     .span {
-      color: #fff;
+      color: #90939d;
       margin-top: 20px;
       font-size: 14px;
       align-self: center;
 
       a {
-        color: #2ab7d8;
+        color: ${colors.primary};
         opacity: 0.8;
 
         &:hover {

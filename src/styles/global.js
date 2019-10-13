@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
 import 'react-toastify/dist/ReactToastify.css';
+import colors from './colors';
 
 export default createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
@@ -18,7 +19,7 @@ export default createGlobalStyle`
 
   html, body, #root {
     height: 100%;
-    background: #110824;
+    background: ${colors.tertiary};
   }
 
   body {

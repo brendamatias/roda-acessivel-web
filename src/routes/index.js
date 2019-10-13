@@ -7,7 +7,7 @@ import SignUp from '../pages/SignUp';
 
 import Dashboard from '../pages/Dashboard';
 import Profile from '../pages/Profile';
-import Location from '../pages/Location';
+import Details from '../pages/Details';
 import Category from '../pages/Category';
 import Evaluation from '../pages/Evaluation';
 
@@ -19,7 +19,7 @@ export default function Routes() {
 
       <Route path="/dashboard" exact component={Dashboard} isPrivate />
       <Route path="/dashboard/:category" component={Category} isPrivate />
-      <Route path="/location/:location" component={Location} isPrivate />
+      <Route path="/details/:location" component={Details} isPrivate />
       <Route path="/profile" component={Profile} isPrivate />
       <Route path="/evaluation/:location" component={Evaluation} isPrivate />
 
