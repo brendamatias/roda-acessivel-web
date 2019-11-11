@@ -9,6 +9,8 @@ import colors from '~/styles/colors';
 
 export default function Details({ match, history }) {
   const [location, setLocation] = useState([]);
+  const [accessibility, setAccessibility] = useState([]);
+
   const [address, setAddress] = useState([]);
   const [image, setImage] = useState([]);
   const [entry, setEntry] = useState([]);
@@ -32,11 +34,41 @@ export default function Details({ match, history }) {
     return colors.default;
   }
 
+  function returnParameters() {
+    if (accessibility >= 4) {
+      return 'ACESSÍVEL';
+    }
+
+    if (accessibility > 2) {
+      return 'PARCIALMENTE ACESSÍVEL';
+    }
+
+    if (accessibility > 0) {
+      return 'NÃO ACESSÍVEL';
+    }
+
+    return 'NÃO AVALIADO';
+  }
+
+  function returnAccessibility(data) {
+    let result =
+      parseInt(data.entry_note, 10) +
+      parseInt(data.parking_note, 10) +
+      parseInt(data.circulation_note, 10) +
+      parseInt(data.bathroom_note, 10);
+
+    result /= 4;
+
+    return result;
+  }
+
   useEffect(() => {
     async function loadLocation() {
       const response = await api.get(`locations/${locationId}`);
 
       setLocation(response.data[0]);
+      setAccessibility(returnAccessibility(location));
+
       setAddress(response.data[0].address);
       setImage(response.data[0].image.url);
 
@@ -52,7 +84,7 @@ export default function Details({ match, history }) {
     }
 
     loadLocation();
-  }, [locationId]);
+  }, [location, locationId, returnAccessibility]);
 
   return (
     <Container>
@@ -60,7 +92,7 @@ export default function Details({ match, history }) {
       <img className="img" src={image} alt={location.title} />
       <Description>
         <strong>{location.name}</strong>
-        <span>ACESSÍVEL</span>
+        <span>{returnParameters(accessibility)}</span>
         <div className="endereco">
           <p>
             {address.street}, {address.number} - {address.neighborhood}

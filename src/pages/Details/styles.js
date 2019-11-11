@@ -62,6 +62,10 @@ export const Description = styled.div`
   flex-direction: column;
   border: 1px solid #dbdbdb;
 
+  span {
+    font-size: 12px;
+  }
+
   strong {
     font-size: 24px;
     color: #333333;
