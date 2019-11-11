@@ -2,9 +2,9 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import logo from '~/assets/logo-principal.svg';
+import logo from '~/assets/logo.png';
 
-import { Container, Content, Profile } from './styles';
+import { Container, Content, Title, Profile } from './styles';
 
 export default function Header() {
   const profile = useSelector(state => state.user.profile);
@@ -14,6 +14,7 @@ export default function Header() {
       <Content>
         <nav>
           <img src={logo} alt="Roda Acessível" />
+          <Title>Roda Acessível</Title>
           <Link to="/dashboard">DASHBOARD</Link>
         </nav>
         <aside>

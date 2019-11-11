@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom';
 import { Form, Input } from '@rocketseat/unform';
 import * as Yup from 'yup';
 
-import logo from '~/assets/logo.svg';
+import Title from '~/components/Title';
+
+import logo from '~/assets/logo.png';
 
 import { signUpRequest } from '~/store/modules/auth/actions';
 
@@ -29,6 +31,7 @@ export default function SignUp() {
   return (
     <>
       <img src={logo} alt="Roda Acessível" />
+      <Title>Roda Acessível</Title>
 
       <Form schema={schema} onSubmit={handleSubmit}>
         <Input name="name" placeholder="Nome" />
@@ -36,9 +39,8 @@ export default function SignUp() {
         <Input name="password" type="password" placeholder="Senha" />
 
         <button type="submit">{loading ? 'Carregando...' : 'Cadastrar'}</button>
-        <span className="span">
-          Já tem uma conta? <Link to="/">Entrar agora</Link>
-        </span>
+
+        <Link to="/">Já tenho uma conta</Link>
       </Form>
     </>
   );

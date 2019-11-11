@@ -6,7 +6,7 @@ const url =
     : 'http://159.89.186.143';
 
 const api = axios.create({
-  baseURL: url,
+  baseURL: 'http://159.89.186.143',
 });
 
 export default api;

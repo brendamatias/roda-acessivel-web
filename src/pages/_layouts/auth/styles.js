@@ -8,6 +8,7 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  background: ${colors.secondary};
 `;
 
 export const Content = styled.div`
@@ -25,31 +26,30 @@ export const Content = styled.div`
     margin-top: 30px;
 
     input {
-      background: rgba(255, 255, 255, 0.1);
-      border: 0;
-      border-radius: 8px;
-      height: 44px;
       padding: 0 15px;
+      height: 46px;
+      background: #fff;
+      border-radius: 4px;
+      border: 0.6px solid rgba(0, 0, 0, 0.2);
+
       color: #4e5159;
       margin: 0 0 10px;
-      border: 2px solid #dfe5f2;
-      font-size: 1rem;
+      font-size: 0.9rem;
       line-height: 1.25;
 
       &:focus {
         transition: ease-in-out, border 0.35s ease-in-out;
-        border: 2px solid ${colors.secondary};
       }
 
       &::placeholder {
-        color: rgba(0, 0, 0, 0.3);
+        color: rgba(0, 0, 0, 0.4);
       }
     }
 
     button {
       margin: 5px 0 0;
       height: 44px;
-      background: ${colors.secondary};
+      background: ${colors.pink};
       font-weight: bold;
       color: #fff;
       border: 0;
@@ -58,7 +58,7 @@ export const Content = styled.div`
       transition: background 0.2s;
 
       &:hover {
-        background: ${darken(0.06, colors.secondary)};
+        background: ${darken(0.06, colors.pink)};
       }
     }
 
@@ -69,19 +69,16 @@ export const Content = styled.div`
       font-weight: bold;
     }
 
-    .span {
-      color: #90939d;
+    a {
+      color: #fff;
       margin-top: 20px;
       font-size: 14px;
       align-self: center;
+      opacity: 0.8;
+      font-weight: bold;
 
-      a {
-        color: ${colors.primary};
-        opacity: 0.8;
-
-        &:hover {
-          opacity: 1;
-        }
+      &:hover {
+        opacity: 1;
       }
     }
   }

@@ -21,9 +21,8 @@ export const Content = styled.div`
     align-items: center;
 
     img {
-      margin-right: 20px;
-      padding-right: 20px;
-      border-right: 1px solid #eee;
+      width: 35px;
+      margin-right: 10px;
     }
 
     a {
@@ -77,4 +76,17 @@ export const Profile = styled.div`
     height: 32px;
     border-radius: 50%;
   }
+`;
+
+export const Title = styled.span`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 20px;
+  color: #fff;
+  margin-top: 10px;
+  border-right: 1px solid #eee;
+  margin-right: 20px;
+  padding-right: 20px;
 `;

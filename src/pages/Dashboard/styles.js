@@ -35,8 +35,8 @@ export const Container = styled.div`
         justify-content: center;
         align-items: center;
         background: ${colors.secondary};
-        height: 80px;
-        width: 80px;
+        height: 100px;
+        width: 100px;
         margin: 0 auto 5px auto;
         border-radius: 4px;
         transition: background 0.2s;
