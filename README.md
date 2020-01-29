@@ -24,7 +24,6 @@
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - [React](https://reactjs.org)
-- [React Native](https://facebook.github.io/react-native/)
 
 ## 💻 Projeto
 
@@ -32,7 +31,7 @@ O Roda Acessível é uma aplicação que visa disponibilizar informações sobre
 
 ## 🔖 Iniciando aplicação
 
-- Configure o backend em: <a href="https://github.com/brendamatias/meetapp-server">Backend</a>
+- Configure o backend em: <a href="https://github.com/brendamatias/roda-acessivel-server">Backend</a>
 - Clone este repositório usando `git clone git@github.com:brendamatias/roda-acessivel-web.git`;
 - Mova-se para diretório da aplicação: `roda-acessivel-web`;
 - Execute `yarn install` ou `npm install` para instalar as dependências;
@@ -40,7 +39,7 @@ O Roda Acessível é uma aplicação que visa disponibilizar informações sobre
 
 ## :iphone: Mobile
 
-- Instale as dependências: `yarn install` ou `npm install`;
+- Aplicação mobile disponível em: <a href="https://github.com/brendamatias/roda-acessivel-app">Mobile</a>
 
 ---
 
