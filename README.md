@@ -16,7 +16,6 @@
 <br>
 
 <p align="center">
-  <img alt="Frontend" src=".github/roda-acessivel.png" width="100%">
 </p>
 
 ## :rocket: Tecnologias
