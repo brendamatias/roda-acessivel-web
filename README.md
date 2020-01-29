@@ -29,11 +29,11 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 O Roda Acessível é uma aplicação que visa disponibilizar informações sobre locais acessíveis na cidade do Recife a deficientes físicos, em especial, aos cadeirantes.
 
-## 🔖 Iniciando aplicação
+## :zap: Iniciando aplicação
 
 - Configure o backend em: <a href="https://github.com/brendamatias/roda-acessivel-server">Backend</a>
 - Clone este repositório usando `git clone git@github.com:brendamatias/roda-acessivel-web.git`;
-- Mova-se para diretório da aplicação: `roda-acessivel-web`;
+- Mova-se para diretório da aplicação: `cd roda-acessivel-web`;
 - Execute `yarn install` ou `npm install` para instalar as dependências;
 - Inicie a aplicação com `yarn start` ou `npm start`;
 
