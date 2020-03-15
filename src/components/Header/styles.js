@@ -19,6 +19,7 @@ export const Content = styled.div`
   nav {
     display: flex;
     align-items: center;
+    justify-content: space-between;
 
     img {
       width: 35px;
@@ -35,10 +36,35 @@ export const Content = styled.div`
         color: ${darken(0.09, colors.primary)};
       }
     }
+  }
 
-    aside {
-      display: flex;
-      align-items: center;
+  aside {
+    display: flex;
+    align-items: center;
+
+    button {
+      background: ${colors.pink};
+      border: none;
+      color: #fff;
+      padding: 10px 30px;
+      border-radius: 4px;
+      margin-left: 15px;
+
+      &:hover {
+        background: ${darken(0.06, colors.pink)};
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    a:nth-child(3),
+    span {
+      display: none;
+    }
+
+    aside button {
+      margin-left: 5px;
+      padding: 10px 20px;
     }
   }
 `;
@@ -69,6 +95,12 @@ export const Profile = styled.div`
         color: rgba(255, 255, 255, 0.8);
       }
     }
+
+    @media (max-width: 767px) {
+      strong {
+        font-size: 12px;
+      }
+    }
   }
 
   img {
@@ -85,7 +117,6 @@ export const Title = styled.span`
   font-weight: bold;
   font-size: 20px;
   color: #fff;
-  margin-top: 10px;
   border-right: 1px solid #eee;
   margin-right: 20px;
   padding-right: 20px;
