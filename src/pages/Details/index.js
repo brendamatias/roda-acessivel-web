@@ -50,19 +50,19 @@ export default function Details({ match, history }) {
     return 'NÃO AVALIADO';
   }
 
-  function returnAccessibility(data) {
-    let result =
-      parseInt(data.entry_note, 10) +
-      parseInt(data.parking_note, 10) +
-      parseInt(data.circulation_note, 10) +
-      parseInt(data.bathroom_note, 10);
-
-    result /= 4;
-
-    return result;
-  }
-
   useEffect(() => {
+    function returnAccessibility(data) {
+      let result =
+        parseInt(data.entry_note, 10) +
+        parseInt(data.parking_note, 10) +
+        parseInt(data.circulation_note, 10) +
+        parseInt(data.bathroom_note, 10);
+
+      result /= 4;
+
+      return result;
+    }
+
     async function loadLocation() {
       const response = await api.get(`locations/${locationId}`);
 
@@ -84,7 +84,7 @@ export default function Details({ match, history }) {
     }
 
     loadLocation();
-  }, [location, locationId, returnAccessibility]);
+  }, [location, locationId]);
 
   return (
     <Container>
