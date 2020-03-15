@@ -53,4 +53,12 @@ export const Container = styled.div`
       }
     }
   }
+
+  @media (max-width: 767px) {
+    ul {
+      margin-top: 20px;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 15px;
+    }
+  }
 `;

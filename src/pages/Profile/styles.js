@@ -84,4 +84,19 @@ export const Container = styled.div`
       background: ${darken(0.08, '#f64c75')};
     }
   }
+
+  @media (max-width: 767px) {
+    form {
+      margin-top: 20px;
+
+      input {
+        height: 44px;
+        width: 320px;
+      }
+    }
+
+    > button {
+      width: 320px;
+    }
+  }
 `;
