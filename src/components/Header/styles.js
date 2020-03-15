@@ -6,6 +6,10 @@ import colors from '~/styles/colors';
 export const Container = styled.div`
   background: ${colors.secondary};
   padding: 0 30px;
+
+  @media (max-width: 767px) {
+    padding: 0 20px;
+  }
 `;
 
 export const Content = styled.div`
@@ -29,7 +33,6 @@ export const Content = styled.div`
     a {
       font-weight: bold;
       color: #fff;
-      margin-left: 20px;
       transition: color 0.2s;
 
       &:hover {
