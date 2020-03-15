@@ -121,19 +121,19 @@ export default function Details({ match, history }) {
           <strong>
             Estacionamento <Circle background={parking} />
           </strong>
-          <p>Entrada facilitada para pessoas com dificuldade de locomoção.</p>
+          <p>Estacionamento acessível para pessoas com dificuldade de locomoção.</p>
         </li>
         <li>
           <strong>
             Circulação interna <Circle background={circulation} />
           </strong>
-          <p>Entrada facilitada para pessoas com dificuldade de locomoção.</p>
+          <p>Circulação interna facilitada para pessoas com dificuldade de locomoção.</p>
         </li>
         <li>
           <strong>
             Banheiro acessível <Circle background={bathroom} />
           </strong>
-          <p>Entrada facilitada para pessoas com dificuldade de locomoção.</p>
+          <p>Banheiro acessível para pessoas com dificuldade de locomoção.</p>
         </li>
       </Accessibility>
     </Container>

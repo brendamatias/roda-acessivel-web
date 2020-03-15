@@ -1,16 +1,6 @@
 import styled from 'styled-components';
 import { darken } from 'polished';
 
-export const Loading = styled.div`
-  color: #fff;
-  font-size: 30px;
-  font-weight: bold;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-`;
-
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -46,6 +36,15 @@ export const Container = styled.div`
 
     &:hover {
       background: ${darken(0.08, '#f64c75')};
+    }
+  }
+
+  @media (max-width: 767px) {
+    margin: 40px 10px;
+
+    img {
+      height: 180px;
+      margin: 0 auto;
     }
   }
 `;
@@ -90,6 +89,24 @@ export const Description = styled.div`
   .open {
     color: #2d9900;
   }
+
+  @media (max-width: 767px) {
+    width: 300px;
+    padding: 15px;
+
+    span {
+      font-size: 11px;
+    }
+
+    strong {
+      font-size: 18px;
+      color: #333333;
+    }
+
+    p {
+      font-size: 13px;
+    }
+  }
 `;
 
 export const Accessibility = styled.ul`
@@ -103,6 +120,7 @@ export const Accessibility = styled.ul`
     color: #333333;
     border-bottom: 1px solid #eee;
     padding: 15px 0;
+
     span {
       display: flex;
       align-items: center;
@@ -118,14 +136,16 @@ export const Accessibility = styled.ul`
         background: black;
       }
     }
+
     strong {
       display: flex;
       align-items: center;
       padding-bottom: 10px;
-
-      div {
-      }
     }
+  }
+
+  @media (max-width: 767px) {
+    padding: 30px;
   }
 `;
 
