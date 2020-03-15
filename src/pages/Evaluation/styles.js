@@ -16,7 +16,7 @@ export const Container = styled.div`
   }
 
   strong {
-    color: ${colors.primary}
+    color: ${colors.primary};
     font-size: 30px;
   }
 
@@ -43,6 +43,15 @@ export const Container = styled.div`
       background: ${darken(0.06, '#f64c75')};
     }
   }
+
+  @media (max-width: 767px) {
+    margin: 40px 22px;
+    justify-content: start;
+
+    .content {
+      padding: 30px;
+    }
+  }
 `;
 
 export const Note = styled.div`
@@ -67,5 +76,9 @@ export const Note = styled.div`
     margin: 0 10px;
   }
 
-  /*color: #ff709f;*/
+  @media (max-width: 767px) {
+    strong {
+      font-size: 14px;
+    }
+  }
 `;
