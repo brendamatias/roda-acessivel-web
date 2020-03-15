@@ -38,6 +38,14 @@ export const Container = styled.div`
       font-weight: bold;
     }
   }
+
+  @media (max-width: 767px) {
+    margin-top: 40px;
+
+    footer {
+      margin-bottom: 20px;
+    }
+  }
 `;
 
 export const List = styled.ul`
@@ -75,6 +83,17 @@ export const List = styled.ul`
     font-weight: bold;
     color: ${colors.pink}
   }
+
+  @media (max-width: 767px) {
+    height: 100%;
+    margin-bottom: 20px;
+
+    .span {
+      max-width: 270px;
+      font-size: 24px;
+      margin: 150px 0;
+    }
+  }
 `;
 
 export const Description = styled.div`
@@ -106,6 +125,20 @@ export const Description = styled.div`
       }
     }
   }
+
+  @media (max-width: 767px) {
+    div:last-child {
+      width: 150px;
+
+      a {
+        font-size: 16px;
+      }
+
+      p, p span {
+        font-size: 11px;
+      }
+    }
+  }
 `;
 
 export const Image = styled.div`
@@ -114,6 +147,11 @@ export const Image = styled.div`
   background: url(${props => props.src}) center center no-repeat;
   background-size: 250px;
   border-radius: 4px 0 0 4px;
+
+  @media (max-width: 767px) {
+    width: 80px;
+    height: 80px;
+  }
 `;
 
 export const Icon = styled.img`
