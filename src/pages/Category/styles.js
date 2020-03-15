@@ -22,12 +22,6 @@ export const Container = styled.div`
     }
   }
 
-  ul {
-    display: flex;
-    flex-direction: column;
-    margin-top: 30px;
-  }
-
   footer {
     display: flex;
     align-items: center;
@@ -46,25 +40,47 @@ export const Container = styled.div`
   }
 `;
 
-export const Location = styled.li`
-  padding-right: 20px;
-  margin-bottom: 20px;
-  border-radius: 4px;
-  background: #fff;
-  display: flex;
-  justify-content: space-between;
+export const List = styled.ul`
+  display: grid;
+  grid-template-columns: auto;
+  grid-gap: 20px;
+  margin-top: 30px;
 
-  .img {
-    width: 120px;
+  /*
+    Tela inteira: 100vh
+    Header: 64px
+    Margin Top Container + List: 80px + 30px
+    Título: 37px
+    Div da páginação: 70px
+  */
+
+  height: calc(100vh - 64px - 80px - 30px - 37px - 70px);
+
+  li {
+    padding-right: 20px;
+    border-radius: 4px;
+    max-width: 450px;
     height: 120px;
-    border-radius: 4px 0 0 4px;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .span {
+    display: flex;
+    align-items: center;
+    font-size: 40px;
+    max-width: 430px;
+    text-align: center;
+    font-weight: bold;
+    color: ${colors.pink}
   }
 `;
 
 export const Description = styled.div`
   display: flex;
 
-  div {
+  div:last-child {
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -92,7 +108,16 @@ export const Description = styled.div`
   }
 `;
 
+export const Image = styled.div`
+  width: 120px;
+  height: 120px;
+  background: url(${props => props.src}) center center no-repeat;
+  background-size: 250px;
+  border-radius: 4px 0 0 4px;
+`;
+
 export const Icon = styled.img`
+  display: block;
   margin-left: 20px;
   width: 40px;
 `;
